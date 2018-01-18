@@ -1,13 +1,15 @@
 {
-  "name": "react-multi-select-box",
+  "name": "react-multiselect-box",
   "version": "0.1.0",
-  "description": "A multi select box component for React.",
+  "description": "A multiselect box component for React.",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "demo": "node scripts/demo.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run demo",
+    "deploy": "gh-pages -d demo"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",

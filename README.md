@@ -2,7 +2,7 @@
 
 ## Description
 
-A multi select box component for <a href="https://reactjs.org/" target="_blank">React</a>. This use <a href="">react-virtualized</a> and is based on an old jquery plugin.
+A multiselect box component for <a href="https://reactjs.org/" target="_blank">React</a>. This use <a href="">react-virtualized</a> and is based on an old jquery plugin.
 
 ## Demo
 
@@ -10,13 +10,13 @@ Live demo: [https://facuesr.github.io/react-multi-select-box/](https://facuesr.g
 
 ## Installation
 
-`npm install react-multi-select-box --save`
+`npm install react-multiselect-box --save`
 
 Then, you can import react-multi-select-box in your app as follows:
 
 ```js
-import ReactMultiSelectBox from "react-multi-select-box";
-import "react-multi-select-box/build/css/index.css";
+import MultiSelectBox from "react-multiselect-box";
+import "react-multiselect-box/build/css/index.css";
 ```
 
 ## Usage
