@@ -6,13 +6,13 @@ A multiselect box component for <a href="https://reactjs.org/" target="_blank">R
 
 ## Demo
 
-Live demo: [https://facuesr.github.io/react-multi-select-box/](https://facuesr.github.io/react-multi-select-box/)
+Live demo: [https://facuesr.github.io/react-multiselect-box/](https://facuesr.github.io/react-multiselect-box/)
 
 ## Installation
 
 `npm install react-multiselect-box --save`
 
-Then, you can import react-multi-select-box in your app as follows:
+Then, you can import react-multiselect-box in your app as follows:
 
 ```js
 import MultiSelectBox from "react-multiselect-box";
