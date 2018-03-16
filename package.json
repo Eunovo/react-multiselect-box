@@ -107,6 +107,10 @@
   },
   "keywords": [
     "multiselect",
+    "list",
+    "listBox",
+    "listMultiselect",
+    "reactMultiselect",
     "react",
     "box",
     "cra",
