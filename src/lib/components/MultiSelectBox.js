@@ -1,22 +1,28 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import ItemRow from "./ItemRow";
-import { List, AutoSizer } from "react-virtualized";
-import "./MultiSelectBox.css";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import ItemRow from './ItemRow'
+import { List, AutoSizer } from 'react-virtualized'
+import './MultiSelectBox.css'
 
 class MultiSelectBox extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       selectedList: [],
-      filterText: ""
-    };
+      filterText: ''
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.options !== this.props.options) {
+      this.setState({ selectedList: [] })
+    }
   }
 
   getFilteredOptions() {
-    const { valueKey, labelKey, options } = this.props;
-    const { filterText, selectedList } = this.state;
+    const { valueKey, labelKey, options } = this.props
+    const { filterText, selectedList } = this.state
     return options
       .filter(
         item =>
@@ -29,68 +35,68 @@ class MultiSelectBox extends Component {
         item[labelKey]
           .toLocaleLowerCase()
           .includes(filterText.toLocaleLowerCase())
-      );
+      )
   }
 
   handleAddClick = selectedItem => {
-    const { selectedList } = this.state;
+    const { selectedList } = this.state
     this.setState(
       {
         selectedList: [...selectedList, selectedItem]
       },
       () => {
-        this.onChangeEvent();
+        this.onChangeEvent()
       }
-    );
-  };
+    )
+  }
 
   handleRemoveClick = (selectedItem, index) => {
-    const { selectedList } = this.state;
+    const { selectedList } = this.state
     this.setState(
       {
         selectedList: selectedList.filter((item, i) => i !== index)
       },
       () => {
-        this.onChangeEvent();
+        this.onChangeEvent()
       }
-    );
-  };
+    )
+  }
 
   handleSelectAllClick = () => {
-    const { selectedList } = this.state;
+    const { selectedList } = this.state
     this.setState(
       {
         selectedList: [...selectedList, ...this.getFilteredOptions()],
-        filterText: ""
+        filterText: ''
       },
       () => {
-        this.onChangeEvent();
+        this.onChangeEvent()
       }
-    );
-  };
+    )
+  }
 
   handleRemoveAllClick = () => {
     this.setState(
       {
         selectedList: [],
-        filterText: ""
+        filterText: ''
       },
       () => {
-        this.onChangeEvent();
+        this.onChangeEvent()
       }
-    );
-  };
+    )
+  }
 
   handleFilterChange = event => {
-    this.setState({ filterText: event.target.value });
-  };
+    this.setState({ filterText: event.target.value })
+  }
 
   onChangeEvent = () => {
-    const { onChange, valueKey, labelKey } = this.props;
-    const { selectedList } = this.state;
-    const selectedValues = selectedList.map(item => item[valueKey || labelKey]);
-    if (onChange) onChange(selectedValues);
-  };
+    const { onChange, valueKey, labelKey } = this.props
+    const { selectedList } = this.state
+    const selectedValues = selectedList.map(item => item[valueKey || labelKey])
+    if (onChange) onChange(selectedValues)
+  }
 
   render() {
     const {
@@ -98,10 +104,11 @@ class MultiSelectBox extends Component {
       addAllLabel,
       removeAllLabel,
       searchPlaceHolder,
-      selectedLabel
-    } = this.props;
-    const { selectedList, filterText } = this.state;
-    const availableData = this.getFilteredOptions();
+      selectedLabel,
+      boxHeight
+    } = this.props
+    const { selectedList, filterText } = this.state
+    const availableData = this.getFilteredOptions()
     return (
       <div className="multi-select">
         <div className="available-list">
@@ -119,7 +126,7 @@ class MultiSelectBox extends Component {
             {({ width }) => (
               <List
                 className="list-container"
-                height={173}
+                height={boxHeight}
                 rowCount={availableData.length}
                 rowHeight={25}
                 width={width}
@@ -153,7 +160,7 @@ class MultiSelectBox extends Component {
             {({ width }) => (
               <List
                 className="list-container"
-                height={173}
+                height={boxHeight}
                 rowCount={selectedList.length}
                 rowHeight={25}
                 width={width}
@@ -172,16 +179,17 @@ class MultiSelectBox extends Component {
           </AutoSizer>
         </div>
       </div>
-    );
+    )
   }
 }
 
 MultiSelectBox.defaultProps = {
-  addAllLabel: "Add All",
-  removeAllLabel: "Remove All",
-  searchPlaceHolder: "Search...",
-  selectedLabel: "Items selected"
-};
+  addAllLabel: 'Add All',
+  removeAllLabel: 'Remove All',
+  searchPlaceHolder: 'Search...',
+  selectedLabel: 'Items selected',
+  boxHeight: 173
+}
 
 MultiSelectBox.propTypes = {
   options: PropTypes.array.isRequired,
@@ -191,6 +199,6 @@ MultiSelectBox.propTypes = {
   addAllLabel: PropTypes.string,
   removeAllLabel: PropTypes.string,
   onChange: PropTypes.func
-};
+}
 
-export default MultiSelectBox;
+export default MultiSelectBox
