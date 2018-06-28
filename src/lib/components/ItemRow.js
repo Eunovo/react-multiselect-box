@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const ItemRow = ({
   index,
@@ -16,13 +16,13 @@ const ItemRow = ({
       style={style}
       onClick={() => onItemClick(itemData, index)}
     >
-      <span>{itemData[labelKey]}</span>
+      <span>{itemData && itemData[labelKey]}</span>
       <a>
         <i className={icon} aria-hidden="true" />
       </a>
     </div>
-  );
-};
+  )
+}
 
 ItemRow.propTypes = {
   index: PropTypes.number,
@@ -32,6 +32,6 @@ ItemRow.propTypes = {
   itemData: PropTypes.object,
   onItemClick: PropTypes.func,
   icon: PropTypes.string
-};
+}
 
-export default ItemRow;
+export default ItemRow

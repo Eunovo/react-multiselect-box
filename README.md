@@ -15,8 +15,8 @@ Live demo: [https://facuesr.github.io/react-multiselect-box/](https://facuesr.gi
 Then, you can import react-multiselect-box in your app as follows:
 
 ```js
-import MultiSelectBox from "react-multiselect-box";
-import "react-multiselect-box/build/css/index.css";
+import MultiSelectBox from 'react-multiselect-box'
+import 'react-multiselect-box/build/css/index.css'
 ```
 
 ## Usage
@@ -24,15 +24,25 @@ import "react-multiselect-box/build/css/index.css";
 ```js
 <MultiSelectBox
   options={[
-    { desc: "Item 1", value: "1" },
-    { desc: "Item 2", value: "2" },
-    { desc: "Item 3", value: "3" }
+    { desc: 'Item 1', value: '1' },
+    { desc: 'Item 2', value: '2' },
+    { desc: 'Item 3', value: '3' }
   ]}
   labelKey="desc"
   valueKey="value"
-  onChange={selectedValues => {
-    console.log(selectedValues);
+  onAdd={selectedItem => {
+
   }}
+  onRemove={(removedItem, index) => {
+
+  }}
+  onSelectAll={selectedItems => {
+
+  }}
+  onRemoveAll={() =>
+
+  }
+  valueArray={[2,3]}
 />
 ```
 
