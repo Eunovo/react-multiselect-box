@@ -1,6 +1,6 @@
 {
   "name": "react-multiselect-box",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A multiselect box component for React.",
   "main": "build/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/facuesr/react-multiselect-box#readme",
   "license": "MIT",
   "dependencies": {
+    "core-js": "^3.0.0-beta.13",
     "react-virtualized": "^9.17.3"
   },
   "devDependencies": {

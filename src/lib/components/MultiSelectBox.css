@@ -131,7 +131,7 @@
 }
 
 .available-list .item:hover {
-  background-color: #00ff004d;
+  background-color: rgba(0, 255, 0, 0.2);
 }
 
 .selected-list .item:hover {

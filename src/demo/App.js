@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import 'core-js/modules/es.array.find'
+import 'core-js/modules/es.array.find-index'
+import 'core-js/modules/es.promise'
+import 'core-js/modules/es.string.includes'
+import 'core-js/modules/es.object.assign'
+
 import MultiSelectBox from '../lib'
 import './styles.css'
 
