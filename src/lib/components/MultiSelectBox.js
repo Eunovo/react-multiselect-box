@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import ItemRow from './ItemRow'
 import { List, AutoSizer } from 'react-virtualized'
 import './MultiSelectBox.css'
 
-class MultiSelectBox extends Component {
+class MultiSelectBox extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {

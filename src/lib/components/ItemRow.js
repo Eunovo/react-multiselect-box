@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 const ItemRow = ({
@@ -34,4 +34,4 @@ ItemRow.propTypes = {
   icon: PropTypes.string
 }
 
-export default ItemRow
+export default memo(ItemRow)
