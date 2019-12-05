@@ -82,7 +82,7 @@ class MultiSelectBox extends PureComponent {
               onChange={this.handleFilterChange}
               placeholder={searchPlaceHolder}
             />
-            <button onClick={this.handleSelectAllClick}>{addAllLabel}</button>
+            <button type="button" onClick={this.handleSelectAllClick}>{addAllLabel}</button>
           </div>
           <AutoSizer disableHeight>
             {({ width }) => (
@@ -114,7 +114,7 @@ class MultiSelectBox extends PureComponent {
                 {valueArray.length} {selectedLabel}
               </span>
             </div>
-            <button onClick={this.handleRemoveAllClick}>
+            <button type="button" onClick={this.handleRemoveAllClick}>
               {removeAllLabel}
             </button>
           </div>
